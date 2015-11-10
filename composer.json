@@ -1,0 +1,23 @@
+{
+    "name": "luk4z7/zf2-componentization",
+    "description": "Componentização ZF2",
+    "license": "MIT",
+    "authors": [
+    {
+        "name": "Lucas Alves",
+        "email": "luk4z_7@hotmail.com"
+      }
+    ],
+    "config": {
+        "process-timeout": 3000
+    },
+    "require": {
+        "php": ">=5.5",
+        "zendframework/zendframework": "2.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Components": "src/Components/"
+        }
+    }
+}
