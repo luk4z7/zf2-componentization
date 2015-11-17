@@ -3,6 +3,7 @@
 namespace Components\EventManager;
 
 use Zend\EventManager\EventManager as Event;
+use Zend\EventManager\EventManager;
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
 
@@ -12,6 +13,11 @@ class CreditCard implements EventManagerAwareInterface
      * @var
      */
     protected $event;
+
+    /**
+     * @var
+     */
+    protected $timezone;
 
     const BRAND_VISA = 'visa';
     const BRAND_MASTERCARD = 'mastercard';
@@ -148,5 +154,32 @@ class CreditCard implements EventManagerAwareInterface
             ['number' => $number, 'status' => 'terceiro processamento'],
             function () {}
         );
+    }
+
+    /**
+     * @param array $array
+     * @return mixed
+     */
+    public function exportParameters($array = array())
+    {
+        return var_export($array);
+    }
+
+    /**
+     * @param \DateTimeZone $timezone
+     * @return $this
+     */
+    public function setTimezone(\DateTimeZone $timezone)
+    {
+        $this->timezone = $timezone;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function brand()
+    {
+        return self::BRAND_DINERS_CLUB;
     }
 }
