@@ -6,14 +6,15 @@
     {
         "name": "Lucas Alves",
         "email": "luk4z_7@hotmail.com"
-      }
+    }
     ],
     "config": {
         "process-timeout": 3000
     },
     "require": {
         "php": ">=5.5",
-        "zendframework/zendframework": "2.3"
+        "zendframework/zendframework": "2.3",
+        "ocramius/proxy-manager" : "0.3.*"
     },
     "autoload": {
         "psr-0": {
